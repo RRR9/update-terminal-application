@@ -19,7 +19,7 @@ namespace UpdateApp
             if(!CreateMd5Hash(platform.ToString() + typeApplication.ToString() + _password).Equals(hash)) {
                 return BadRequest();
             }
-            string sqlQuery = $"SELECT * FROM [INFO_VERSION] WHERE [statusNew] = 1 AND [PlatformsID] = {platform} AND [TypeApplicationID] = {typeApplication}";
+            string sqlQuery = $"SELECT * FROM [DB].[dbo].[INFO_VERSION] WHERE [statusNew] = 1 AND [PlatformsID] = {platform} AND [TypeApplicationID] = {typeApplication}";
             string response = "";
             try
             {
